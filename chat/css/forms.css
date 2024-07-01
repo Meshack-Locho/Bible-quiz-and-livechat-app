@@ -1,0 +1,344 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    color: white;
+    overflow-y: hidden;
+}
+.bg-image{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(20%);
+    z-index: -1;
+    object-fit: cover;
+}
+
+/*messages*/
+
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow:hidden;
+    position: relative;
+    padding-top: 100px;
+}
+#message-form{
+    padding: 10px 0;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+}
+#message-form input[type="file"]{
+    display: none;
+}
+.wrapper label{
+    cursor: pointer;
+}
+#reply{
+    padding: 10px;
+    width: 55%;
+    border-radius: 10px;
+    border: none;
+    background-color: #edc68c;
+    color: black;
+    font-family: 20px;
+    font-weight: bold;
+}
+#reply::-webkit-input-placeholder{
+    -webkit-appearance: none;
+    color: black;
+}
+#shared-img{
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.upload-mes{
+    position: fixed;
+    right: 10px;
+    top: 5px;
+    transform: translateX(110%);
+}
+#message-form button{
+    width: 40%;
+    padding: 10px;
+    background-color: #d7993e;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+.messages-cont{
+    width: 97%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    padding: 10px;
+    overflow-y: scroll;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+}
+.messages-cont::-webkit-scrollbar{
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #a45c1e;
+    width: 3px;
+    border-radius: 10px;
+}
+.messages-cont::-webkit-scrollbar-thumb{
+    -webkit-appearance: none;
+
+    background-color: white;
+}
+.message{
+    width: 60%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #d7993e;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 11px;
+}
+.message a{
+    color: black;
+    font-size: 14px;
+}
+.like-btn{
+    color: rgb(252, 249, 249);
+    font-size: 14px; 
+    cursor: pointer;
+}
+.user{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.user img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.actions{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+
+}
+textarea{
+    width: 70%;
+    padding: 10px;
+    height: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: #edc68c;
+    color: black;
+    font-family: 20px;
+    font-weight: bold;
+    font-size: 17px;
+}
+textarea:focus{
+    outline: none;
+}
+textarea::-webkit-input-placeholder{
+    -webkit-appearance: none;
+    color: rgb(0, 0, 0);
+}
+.media{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.fa-bars{
+    position: fixed;
+    left: 2%;
+    top: 2%;
+    z-index: 3;
+    font-size: 30px;
+    cursor: pointer;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    background-color: rgb(23, 23, 23);
+    height: 100%;
+    z-index: 3;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    transform: translateX(-100%);
+    transition: all 1s ease;
+    overflow-y: scroll;
+}
+.menu::-webkit-scrollbar{
+    -webkit-appearance: none;
+    appearance: none;
+}
+.menu.active{
+    transform: translateX(0);
+}
+.menu nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    font-size: 17px;
+}
+.menu nav ul li{
+    cursor: pointer;
+    width: 300px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow:0px 0px 15px rgba(222, 137, 51, 0.257);
+    background-color: #a45c1e;
+}
+.menu nav ul a{
+    color: white;
+    text-decoration: none;
+}
+.menu div{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.menu div img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.menu-toggle{
+    cursor: pointer;
+    font-size: 30px;
+}
+.menu h3{
+    max-width: 300px;
+}
+.menu form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 90%;
+    height: auto;
+    border: 1px solid #a45c1e;
+    padding: 10px;
+}
+.menu form textarea{
+    width: 90%;
+    height: 100px;
+    
+}
+.menu form input[type="submit"]{
+    width: 50%;
+    padding: 10px;
+    background-color: #d7993e;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+.feedback-res{
+    width: 80%;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: #a45c1e;
+    border-radius: 20px;
+    color: white;
+}
+.feedback-res h1{
+    text-align: center;
+}
+.feedback-res button{
+    width: 40%;
+    padding: 10px;
+    background-color: #d7993e;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+}
+.new-message-indicator{
+    position: fixed;
+    left: 10%;
+    top: 5px;
+    width: 250px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a45c1e;
+    z-index: 7;
+}
+#like-form{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#like-btn{
+    background-color: transparent;
+    border: none;
+}
+.warning{
+    position: relative;
+    width: 70%;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #a45c1e;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+}
+.warning a{
+    padding: 10px;
+    width: 200px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: #d7993e;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+@media screen and (max-width: 900px) {
+    .message{
+        width: 90%;
+    }
+    textarea{
+        width: 100%;
+    }
+}
